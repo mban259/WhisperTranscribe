@@ -32,7 +32,7 @@ def transcribe() -> None:
             mel: torch.Tensor = whisper.log_mel_spectrogram(item, device=device)
             probs: dict[str, float]
             _, probs = model.detect_language(mel)
-            result: whisper.DecodingResult = whisper.decode(model, mel, whisper.DecodingOptions())
+            result: whisper.DecodingResult = whisper.decode(model, mel, whisper.DecodingOptions(fp16=(device.type != "cpu")))
             print(f"{max(probs, key=probs.get)}: {result.text}")
 
 
