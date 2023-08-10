@@ -50,7 +50,7 @@ with sc.get_microphone(id=str(sc.default_speaker().name), include_loopback=True)
             audio[n:n + len(data)] = data.reshape(-1)
             n += len(data)
 
-        # 後半4/5以降から絶対値の移動平均最小のところを見つける
+        # 後半4/5以降から二乗の移動平均最小のところを見つける
         m: int = n * 4 // 5
         vol: np.ndarray = np.convolve(audio[m:n]**2, b, "same")
         m += vol.argmin()
