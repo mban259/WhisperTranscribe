@@ -19,7 +19,7 @@ print(f"Loading {MODEL_SIZE} model")
 model: whisper.Whisper = whisper.load_model(MODEL_SIZE).to(device)
 print("done")
 
-b: np.ndarray = np.full(500, 1 / 500, dtype=np.float32)
+b: np.ndarray = np.full(200, 1 / 200, dtype=np.float32)
 q: Queue[np.ndarray] = queue.Queue()
 
 
