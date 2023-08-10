@@ -8,7 +8,7 @@ import soundcard as sc
 import numpy as np
 
 SAMPLE_RATE: Final[int] = 16000
-INTERVAL: Final[int] = 5
+INTERVAL: Final[int] = 3
 BUFFER_SIZE: Final[int] = 4096
 MODEL_SIZE: Literal["tiny", "base", "small", "medium", "large"] = "medium"
 
