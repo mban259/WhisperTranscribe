@@ -1,0 +1,2 @@
+# WhisperTranscribe
+Whisperで文字起こしするスクリプト
